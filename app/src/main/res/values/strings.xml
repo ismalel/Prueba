@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Prueba</string>
+
+    <string name="title">Customers List</string>
+    <string name="btn_sort_code">Sort By Code</string>
+    <string name="btn_sort_name">Sort By Name</string>
+    <string name="btn_sort_reset">Reset</string>
+    <string name="filter_visited">Visited</string>
+    <string name="filter_not_visited">Not Visited</string>
+
+</resources>

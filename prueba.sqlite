@@ -1,0 +1,23 @@
+<!-- Primer consulta -->
+SELECT a.name1 FROM CONTACTS a 
+JOIN (
+		SELECT  ca.code_account, ca.code_contact
+		FROM CONTACTS_ACCOUNTS ca
+		WHERE ca.code_account = (
+			SELECT code
+			FROM ACCOUNTS
+			WHERE  name1="Cliente 26"
+		)
+		GROUP BY ca.code_account
+) ca
+on ca.code_contact = a.code 
+
+<!-- Segunda consulta -->
+SELECT a.name1 as "Customer", b.budget as "Total Budget"
+FROM ACCOUNTS a
+LEFT JOIN CONTACTS_ACCOUNTS ca
+ON ca.code_account = a.code
+INNER JOIN CONTACTS c
+on ca.code_contact = c.code
+LEFT JOIN CONTACTS_BUDGET b
+on b.code_contact = ca.code_contact
